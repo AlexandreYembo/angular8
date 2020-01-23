@@ -47,3 +47,60 @@ You can use html tag instead of specify an html file. You can change in myNewCom
   ...
 })
 ```
+
+### Component selector
+
+The example below shows the selector by using ```app-server``` that means it works like css selector.
+```ts
+  @Component({
+    selector: 'app-servers'
+  });
+```
+
+But you can define ```[app-server]``` to use the attribute selector.
+
+```ts
+  @Component({
+    selector: '[app-servers]'
+  });
+```
+
+But after this change you need to change your html element
+```html
+  <app-servers> </app-servers>
+```
+to
+```html
+  <div app-servers> </div>
+```
+
+### Component by class
+
+The example below shows the selector by using ```app-server``` that means it works like css class.
+```ts
+  @Component({
+    selector: 'app-servers'
+  });
+```
+
+But you can define ```.app-server``` to use the class.
+
+```ts
+  @Component({
+    selector: '.app-servers'
+  });
+```
+
+But after this change you need to change your html element
+```html
+  <app-servers> </app-servers>
+```
+to
+```html
+  <div class="app-servers"> </div>
+```
+
+### Important
+#### you cannot use ID, this is not supported by Angular.
+
+#### You should use ```<app-servers>``` to be unlimited.

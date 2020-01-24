@@ -31,7 +31,7 @@ export class ServerComponent {
 ```html
 <p>Server with ID {{ serverid }} is {{ serverStatus }}</p>
 ```
-Any expresson can result in string in the end.
+Any expression can result in string in the end.
 ```html
 <p>{{ 'Server' }} with ID {{ serverid }} is {{ serverStatus }}</p>
 ```

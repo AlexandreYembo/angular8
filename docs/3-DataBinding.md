@@ -37,4 +37,79 @@ Any expression can result in string in the end.
 ```
 
 ### Property Binding
- 
+Square brackets indicate angular that you are using property binding.
+```html
+<button class="btn btn-primary" disabled>
+```
+instead of this you use property
+```html
+<button class="btn btn-primary" [disabled]="yourvariable"> <-- instead of this you use property>
+```
+
+### String Interpolation vs Property Binding
+#### For string interpolation you can show a dynamic label:
+```html
+<p> {{myVariable}} </p>
+```
+#### but you also can use property binding:
+```html
+<p [innerText]="myVariable"> </p>
+```
+If you want to bring text from your template, just use string interpolation.
+
+If you want to change some property, be that HTML element or a directive or a component, so you can use property binding.
+
+#### String interpolation only works in a normal template, not within another expression of that template, not within a property binding or something like this.
+
+
+### Event Binding
+Insteof of use ``` onclick ``` you define by using ``` (click)="myfunction()" ```
+
+```html
+    <button class="btn btn-primary"
+     [disabled]="yourvariable"
+     (click)="myfunction()"> </button>
+```
+
+### Passing and using Data with Event Binding
+```html
+    <input type="text"
+    class="form-control"
+    (input)="myFunction()">
+
+```
+```(input) ``` this is a normal DOM event provided by the input element.
+
+Now to passe the value of this field, you can do by passing ```$event ```
+
+```html
+<input type="text"
+    (input)="myFunction($event)>
+
+```
+
+```$event``` is kind of a reserved variable name. You can use in the template when using event binding.
+
+###### Important: For this event, only between these quotation marks " ". Example: "function($event)". $event will simply be the data emitted with that event.
+So, the click event gives us an object which for example holds the coordinates where we clicked and the input event also gives us some data, some information about event. Now we can capture this data with ```$event``` passed as an argument to the method we are calling or used anywhere between these quotation marks in the code we are executing.
+
+###### Implementation
+HTML
+```html
+    <input type="text"
+    class="form-control"
+    (input)="myFunction($event)">
+
+```
+Type script code
+```ts
+    export class MyComponent implements OnInit {
+        myFunction(event: Event){
+            this.value = event.target.value;
+        }
+    }
+```
+Also we can explicitly inform it about the type in TypeScript by adding ```<HTMLInputElement>```
+```ts
+    this.value = (<HtmlInputElement>event.target).value;
+```

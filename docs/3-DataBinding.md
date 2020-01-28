@@ -93,7 +93,7 @@ Now to passe the value of this field, you can do by passing ```$event ```
 ###### Important: For this event, only between these quotation marks " ". Example: "function($event)". $event will simply be the data emitted with that event.
 So, the click event gives us an object which for example holds the coordinates where we clicked and the input event also gives us some data, some information about event. Now we can capture this data with ```$event``` passed as an argument to the method we are calling or used anywhere between these quotation marks in the code we are executing.
 
-###### Implementation
+##### Implementation
 HTML
 ```html
     <input type="text"

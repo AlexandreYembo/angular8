@@ -113,3 +113,28 @@ Also we can explicitly inform it about the type in TypeScript by adding ```<HTML
 ```ts
     this.value = (<HtmlInputElement>event.target).value;
 ```
+
+### Two-way-Databinding
+
+###### Important: FormsModule is required for Two-Way-Binding! You need to enable ngModel directive. This is done by adding the FormsModule to the imports[] array in the AppModule.
+###### You then also need to add the import from '@angular/forms' in the app.module.ts file:
+```ts
+    import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  imports: [
+    ...
+    FormsModule //declare to use [(ngModel)] for two-way binding
+  ],
+})
+```
+Two-way-Databinding basically combine propert binding and event binding. You also combine the sintax ```[(ngModel)]``` brackets and parenteses + directive ```ngModel```.
+
+#### How to implement?
+```html
+    <input type="text"
+           class="form-control"
+           [(ngModel)]="myProperty">
+
+```
+It will trigger on the input event and update the value in our component automatically. On other hand, since it is two-way binding, it will also update the value of the input element if we change the propert value somewhere else.

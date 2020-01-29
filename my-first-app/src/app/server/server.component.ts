@@ -6,10 +6,26 @@ import { Component} from '@angular/core';
     templateUrl: './server.component.html'
 })
 export class ServerComponent {
-    serverId: number = 10;
+    serverId: string = "10";
     serverStatus: string = 'offline';
+    serverOff: boolean = true;
+    updateInTwoWayBinding: string = "init";
+
+    constructor(){
+        setTimeout(() => {
+            this.serverOff = false;
+        }, 2000);
+    }
 
     getServerStatus(){
         return this.serverStatus;
-    } 
+    }
+
+    updateMyServerDescription(event:Event){
+        this.serverId = (<HTMLInputElement>event.target).value;
+    }
+
+    addServer(){
+        this.serverStatus = ". My new server is" + this.serverId;
+    }
 }

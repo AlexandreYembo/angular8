@@ -86,7 +86,7 @@ In the service component you add a new property
 ```ts
     servers = ['Element 1', 'Elemement 2']
 ```
-``` *ngFor="let myTemporaryVariable of myArray ```
+``` *ngFor="let myTemporaryVariable of myArray" ```
 
 ```html
     <app-server *ngFor="let server of servers></app-server>

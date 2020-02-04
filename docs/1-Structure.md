@@ -1,4 +1,4 @@
-# Structure
+# 1-Structure
 
 When you create a new app, by default it creates some folders defined by Angular
 

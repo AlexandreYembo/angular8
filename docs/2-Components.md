@@ -1,4 +1,4 @@
-# Components
+# 2-Components
 Each tamplate has their own component. It is a type script class.
 
 You need to define a decorator to create a component.

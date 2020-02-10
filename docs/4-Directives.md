@@ -89,5 +89,11 @@ In the service component you add a new property
 ``` *ngFor="let myTemporaryVariable of myArray" ```
 
 ```html
-    <app-server *ngFor="let server of servers></app-server>
+    <app-server *ngFor="let server of servers"></app-server>
 ```
+
+##### Getting the index using ngFor
+
+```html
+    <div *ngFor="let item of array; let i = index"></div>
+```end

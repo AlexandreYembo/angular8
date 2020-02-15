@@ -9,3 +9,7 @@
 3 - [DataBinding](https://github.com/AlexandreYembo/angular8/blob/master/docs/3-DataBinding.md) 
 
 4 - [Directives](https://github.com/AlexandreYembo/angular8/blob/master/docs/4-Directives.md) 
+
+
+
+[TypeScript Tips:](https://github.com/AlexandreYembo/angular8/blob/master/docs/ts-tips.md) 

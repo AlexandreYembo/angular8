@@ -1,4 +1,4 @@
-#TypeScript Tips
+# TypeScript Tips
 
 ### Constructor declaration in Model class
 So you can define a constructor to set values in properties of a model class, by doing:

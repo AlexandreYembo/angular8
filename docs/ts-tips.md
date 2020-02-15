@@ -22,7 +22,7 @@ Alternativily you can setup in the constructor and it will automatically assign 
     }
 ```
 
-#### Debuging in browser.
+### Debuging in browser.
 Type script does not run on the browser, but you can debug there. Instead of there are javascripts bundles.
 
 But we can access type scrpts file, becase javascript files support ```source maps```.

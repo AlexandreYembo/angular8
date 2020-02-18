@@ -46,6 +46,28 @@ instead of this you use property
 <button class="btn btn-primary" [disabled]="yourvariable"> <-- instead of this you use property>
 ```
 
+#### Important: By default all properties of components are only accessable inside this component, not from outside.
+```ts
+    export class Component1 {
+        myProperty: {prop1: string, prop2: string};   // Only my Component1 will have access for this property
+    }
+```
+But If you want to change this property to be accessable in parent level, you need to add a decorator for this property. Dispite of decorator are not available for classes, in properties we can the decorator ```@Input()```:
+```ts
+    export class Component1 {
+        @Input() myProperty: {prop1: string, prop2: string};   // Only my Component1 will have access for this property
+    }
+```
+and import from '@angular/core' --> ``` { Input } ```
+
+#### Assign an Alias to the property
+So, when you don't want to use the same name of the property you have assing in the component outside, you can add alias:
+```ts
+    @Input('myPropertyNameOutside') myProperty: {prop1: string, prop2: string};
+```
+
+
+
 ### String Interpolation vs Property Binding
 #### For string interpolation you can show a dynamic label:
 ```html
@@ -138,3 +160,67 @@ Two-way-Databinding basically combine propert binding and event binding. You als
 
 ```
 It will trigger on the input event and update the value in our component automatically. On other hand, since it is two-way binding, it will also update the value of the input element if we change the propert value somewhere else.
+
+
+### Binding to Custom Events
+So, if you want to get the event from a child component to a parent you can define in the attribute component:
+
+##### In the parent component
+```html
+    <my-component 
+        (myEvent1)="onMyEventFunction1($event)"
+        (myEvent1)="onMyEventFunction1($event)"> 
+    </my-component>>
+```
+
+```ts
+    // myProperty: type of object expected to get in this method.
+    onMyEventFunction1(myProperty1: {prop1: string, prop2: string}){
+    }
+
+     onMyEventFunction2(myProperty2: {prop1: string, prop2: string}){
+    }
+```
+##### In the child component
+Create 2 new properties and transform them in events emitter with the same name of the event defined in the parent componentf:
+
+```ts
+    @Output() myEvent1 = new EventEmitter<{ prop1: string, prop2: string }>();
+    @Output() myEvent2  = new EventEmitter<{ prop1: string, prop2: string }>();
+
+```
+where ```{ EventEmitter } ``` is imported from ```"@angular/core``` 
+
+```EventEmitter```is used to create an event
+```@Output``` is a decorator to be listenable outside.
+
+where ```{ Output } ``` is imported from ```"@angular/core``` 
+
+Now, in your event in child component you simply call:
+```ts
+    onEventCallMyFunction1(){
+        this.myEvent1.emit({
+            prop1: 'event1',
+            prop2: 'event1'
+        });
+    }
+
+     onEventCallMyFunction2(){
+        this.myEvent2.emit({
+            prop1: 'event2',
+            prop2: 'event2'
+        });
+    }
+```
+
+#### Assign an Alias to custom events
+If you want to assing a alias to the event:
+```ts
+    @Output('AliasEvent1') myEvent1 = new EventEmitter<{ prop1: string, prop2: string }>();
+```
+In the parent component you change for the alias:
+```html
+    <my-component 
+        (AliasEvent1)="onMyEventFunction1($event)"> 
+    </my-component>>
+```

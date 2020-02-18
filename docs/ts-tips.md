@@ -34,3 +34,6 @@ We can access those files in WebPack folder, in chrome DevTools for example.
 ```
     webpack:// --> . --> srcproject
 ```
+
+### Generic types
+In Typescript if you want to define a generic you use: ```<> ```.

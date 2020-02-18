@@ -10,6 +10,8 @@
 
 4 - [Directives](https://github.com/AlexandreYembo/angular8/blob/master/docs/4-Directives.md) 
 
+4 - [View Encapsulation](https://github.com/AlexandreYembo/angular8/blob/master/docs/5-View-Encapsulation.md) 
+
 
 
 [TypeScript Tips:](https://github.com/AlexandreYembo/angular8/blob/master/docs/ts-tips.md) 

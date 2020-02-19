@@ -12,7 +12,7 @@
 
 5 - [View Encapsulation](https://github.com/AlexandreYembo/angular8/blob/master/docs/5-View-Encapsulation.md) 
 
-6 - [Using local references in template](https://github.com/AlexandreYembo/angular8/blob/master/docs/6-Using-local-references-in-template)
+6 - [Using local references in template](https://github.com/AlexandreYembo/angular8/blob/master/docs/6-Using-local-references-in-template.md)
 
 7 - [View Child](https://github.com/AlexandreYembo/angular8/blob/master/docs/7-ViewChild.md) 
 

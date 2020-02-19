@@ -18,7 +18,7 @@ Where ```ViewEncapsulation``` import from ```"@angular/core"```.
 
 ViewEncapsulation has 3 modes:
 
-1- Emulated: this is default, you don't need to use this.
+1- Emulated: this is default.
 
 2- None: This component does not use view encapsulation, so they will apply the style globally. It does not create custom attribute in HTML.
 
